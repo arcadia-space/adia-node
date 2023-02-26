@@ -4,11 +4,11 @@ on:
     inputs:
       repo:
         description: "repo"
-        default: "nanocurrency/nano-node"
+        default: "nanocurrency/paw-node"
         required: true
       ref:
         description: "tag to build"
-        default: "develop"
+        default: "master"
         required: true
 env:
   artifact: 1

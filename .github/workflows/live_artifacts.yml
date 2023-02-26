@@ -4,7 +4,7 @@ on:
     inputs:
       repo:
         description: "repo"
-        default: "nanocurrency/paw-node"
+        default: "paw-digital/paw-node"
         required: true
       ref:
         description: "tag to build"

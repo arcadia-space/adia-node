@@ -8,7 +8,7 @@ on:
         required: true
       ref:
         description: "tag to build"
-        default: "master"
+        default: "refs/heads/master"
         required: true
 env:
   artifact: 1

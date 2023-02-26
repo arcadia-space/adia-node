@@ -3,6 +3,8 @@
 *.lo
 *.o
 *.obj
+bootstrap_weights_beta.cpp
+bootstrap_weights_live.cpp
 
 # Compiled Dynamic libraries
 *.so

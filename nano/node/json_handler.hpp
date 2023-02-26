@@ -77,8 +77,8 @@ public:
 	void ledger ();
 	void mnano_to_raw (nano::uint128_t = nano::Mxrb_ratio);
 	void mnano_from_raw (nano::uint128_t = nano::Mxrb_ratio);
-	void nano_to_raw ();
-	void raw_to_nano ();
+	void paw_to_raw ();
+	void raw_to_paw ();
 	void node_id ();
 	void node_id_delete ();
 	void password_change ();

@@ -27,7 +27,7 @@ elif [[ "$GITHUB_WORKFLOW" = "Test" ]]; then
 fi
 
 if [[ "$GITHUB_WORKFLOW" != "Develop Branch Dockers Deploy" ]]; then
-    docker_image_name="arcadia-space/arcadia${network_tag_suffix}"
+    docker_image_name="arcadiacoin/arcadia${network_tag_suffix}"
 fi
 
 docker_build()

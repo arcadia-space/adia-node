@@ -6,7 +6,13 @@
 
 ## What is Arcadia?
 
-Arcadia is a digital currency for Arcadians.
+Arcadia is a digital currency for Arcadians. Arcadia holds an entire eco-system under which also "PAW", a subculture of it's own operates.
+
+This node provides access to the network and supports transactions to both "adia" as well as "paw" addresses.
+
+Addresses can start with "paw_" or "adia_" but are on the ledger considered the same when replaced with their counter prefix.
+
+The main difference being that in the "PAW" subculture balances are displayed at a 10,000,000 PAW to 1 Adia (Arcadia) ratio. 
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/arcadia_coin?style=social)](https://twitter.com/intent/follow?screen_name=arcadia_coin)
 

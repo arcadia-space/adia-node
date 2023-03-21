@@ -123,10 +123,10 @@ jobs:
         env:
           COMPILER: gcc
         run: ci/actions/linux/install_deps.sh
-      - name: Build Docker (arcadiaspace/arcadia)
+      - name: Build Docker (arcadia-space/arcadia)
         run: CI_TAG=${TAG} ci/actions/linux/docker-build.sh
-      - name: Deploy Docker Hub (arcadiaspace/arcadia)
-        if: ${{ github.repository == 'arcadiaspace/arcadia-node' }}
+      - name: Deploy Docker Hub (arcadia-space/arcadia)
+        if: ${{ github.repository == 'arcadia-space/arcadia-node' }}
         run: CI_TAG=${TAG} ci/actions/linux/docker-deploy.sh
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

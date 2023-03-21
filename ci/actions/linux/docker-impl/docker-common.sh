@@ -27,7 +27,7 @@ elif [[ "$GITHUB_WORKFLOW" = "Test" ]]; then
 fi
 
 if [[ "$GITHUB_WORKFLOW" != "Develop Branch Dockers Deploy" ]]; then
-    docker_image_name="arcadiaspace/arcadia${network_tag_suffix}"
+    docker_image_name="arcadia-space/arcadia${network_tag_suffix}"
 fi
 
 docker_build()
@@ -55,18 +55,18 @@ docker_build()
 docker_deploy()
 {
     if [ -n "$DOCKER_PASSWORD" ]; then
-        echo "$DOCKER_PASSWORD" | docker login -u arcadiaspace --password-stdin
+        echo "$DOCKER_PASSWORD" | docker login -u arcadia-space --password-stdin
         if [[ "$GITHUB_WORKFLOW" = "Develop Branch Dockers Deploy" ]]; then
-            "$scripts"/custom-timeout.sh 30 docker push "pawdigital/paw-env:base"
-            "$scripts"/custom-timeout.sh 30 docker push "pawdigital/paw-env:gcc"
-            "$scripts"/custom-timeout.sh 30 docker push "pawdigital/paw-env:clang"
-            echo "Deployed paw-env"
+            "$scripts"/custom-timeout.sh 30 docker push "arcadia-space/arcadia-env:base"
+            "$scripts"/custom-timeout.sh 30 docker push "arcadia-space/arcadia-env:gcc"
+            "$scripts"/custom-timeout.sh 30 docker push "arcadia-space/arcadia-env:clang"
+            echo "Deployed arcadia-env"
             exit 0
         else
             if [[ "$GITHUB_WORKFLOW" = "Live" ]]; then
-                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep pawdigital | grep -vE "env|ghcr.io|none|latest")
+                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep "arcadia-space" | grep -vE "env|ghcr.io|none|latest")
             else
-                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep pawdigital | grep -vE "env|ghcr.io|none")
+                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep "arcadia-space" | grep -vE "env|ghcr.io|none")
             fi
             for a in $tags; do
                 "$scripts"/custom-timeout.sh 30 docker push "$a"

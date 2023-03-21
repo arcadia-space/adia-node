@@ -1,4 +1,4 @@
-ARG ENV_REPOSITORY=nanocurrency/nano-env
+ARG ENV_REPOSITORY=arcadia-space/arcadia-env
 ARG COMPILER=gcc
 FROM ${ENV_REPOSITORY}:${COMPILER}
 

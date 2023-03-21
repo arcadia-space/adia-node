@@ -14,7 +14,7 @@ else
     BUILD="live"
 fi
 
-if [[ "${GITHUB_REPOSITORY:-}" == "arcadia-space/arcadia-node" ]]; then
+if [[ "${GITHUB_REPOSITORY:-}" == "arcadiacoin/arcadia-node" ]]; then
     DIRECTORY=$BUILD
 else
     DIRECTORY="${S3_BUILD_DIRECTORY}/${BUILD}"

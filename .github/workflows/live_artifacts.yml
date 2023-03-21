@@ -4,7 +4,7 @@ on:
     inputs:
       repo:
         description: "repo"
-        default: "arcadia-space/arcadia-node"
+        default: "arcadiacoin/arcadia-node"
         required: true
       ref:
         description: "tag to build"
@@ -62,7 +62,7 @@ jobs:
           COMPILER: gcc
         run: ci/actions/linux/install_deps.sh
       - name: Build Artifact
-        run: docker run -v ${GITHUB_WORKSPACE}:/workspace arcadia-space/arcadia-env:gcc /bin/bash -c "cd /workspace && CI_TAG=${TAG} ci/build-deploy.sh /usr/lib/x86_64-linux-gnu/cmake/Qt5"
+        run: docker run -v ${GITHUB_WORKSPACE}:/workspace arcadiacoin/arcadia-env:gcc /bin/bash -c "cd /workspace && CI_TAG=${TAG} ci/build-deploy.sh /usr/lib/x86_64-linux-gnu/cmake/Qt5"
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -123,10 +123,10 @@ jobs:
         env:
           COMPILER: gcc
         run: ci/actions/linux/install_deps.sh
-      - name: Build Docker (arcadia-space/arcadia)
+      - name: Build Docker (arcadiacoin/arcadia)
         run: CI_TAG=${TAG} ci/actions/linux/docker-build.sh
-      - name: Deploy Docker Hub (arcadia-space/arcadia)
-        if: ${{ github.repository == 'arcadia-space/arcadia-node' }}
+      - name: Deploy Docker Hub (arcadiacoin/arcadia)
+        if: ${{ github.repository == 'arcadiacoin/arcadia-node' }}
         run: CI_TAG=${TAG} ci/actions/linux/docker-deploy.sh
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

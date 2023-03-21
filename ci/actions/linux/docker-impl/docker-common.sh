@@ -55,18 +55,18 @@ docker_build()
 docker_deploy()
 {
     if [ -n "$DOCKER_PASSWORD" ]; then
-        echo "$DOCKER_PASSWORD" | docker login -u arcadia-space --password-stdin
+        echo "$DOCKER_PASSWORD" | docker login -u arcadiacoin --password-stdin
         if [[ "$GITHUB_WORKFLOW" = "Develop Branch Dockers Deploy" ]]; then
-            "$scripts"/custom-timeout.sh 30 docker push "arcadia-space/arcadia-env:base"
-            "$scripts"/custom-timeout.sh 30 docker push "arcadia-space/arcadia-env:gcc"
-            "$scripts"/custom-timeout.sh 30 docker push "arcadia-space/arcadia-env:clang"
+            "$scripts"/custom-timeout.sh 30 docker push "arcadiacoin/arcadia-env:base"
+            "$scripts"/custom-timeout.sh 30 docker push "arcadiacoin/arcadia-env:gcc"
+            "$scripts"/custom-timeout.sh 30 docker push "arcadiacoin/arcadia-env:clang"
             echo "Deployed arcadia-env"
             exit 0
         else
             if [[ "$GITHUB_WORKFLOW" = "Live" ]]; then
-                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep "arcadia-space" | grep -vE "env|ghcr.io|none|latest")
+                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep "arcadiacoin" | grep -vE "env|ghcr.io|none|latest")
             else
-                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep "arcadia-space" | grep -vE "env|ghcr.io|none")
+                tags=$(docker images --format '{{.Repository}}:{{.Tag }}' | grep "arcadiacoin" | grep -vE "env|ghcr.io|none")
             fi
             for a in $tags; do
                 "$scripts"/custom-timeout.sh 30 docker push "$a"

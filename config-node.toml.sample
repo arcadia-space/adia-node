@@ -138,7 +138,7 @@
 #pow_sleep_interval = 0
 
 # A list of "address" (hostname or ipv6 notation ip address) entries to identify preconfigured peers.
-#preconfigured_peers = ["peering.arcadia.space"]
+#preconfigured_peers = ["peering.arcadiacoin.net"]
 
 # A list of representative account addresses used when creating new accounts in internal wallets.
 #preconfigured_representatives = ["adia_1re5oi6cxgzj3rqf9cj8a7nbnqhiiie5kyknjrg8es845n8p1tckfpuu8b56", "adia_36yxozosuwcqu4yqra7amciorb6pbkk8zawqw7zsmz63kaq18qpyud7y3kx8", "adia_3dqy3kgbz9ubbrah8j15bbx1w8fz6wk6xscd8bpuoyasks6brj9a3o5akmze", "adia_1obpizjiqnxmpqw3f7oe38bc9nkj6psagahn5jx76gfjtkafhgxfac8sn6qr"]

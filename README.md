@@ -1,6 +1,6 @@
 <hr />
 <div align="center">
-    <img src="images/logoadia.svg" alt="Logo" width='150px' height='auto'/>
+    <img src="images/logoarcadia.svg" alt="Logo" width='150px' height='auto'/>
 </div>
 <hr />
 
